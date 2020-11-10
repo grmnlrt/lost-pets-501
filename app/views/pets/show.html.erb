@@ -1,0 +1,15 @@
+<h1><%= @pet.name %></h1>
+<small><%= link_to "Edit", edit_pet_path(@pet) %></small>
+<small>
+  <%= link_to pet_path(@pet), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/OOjs_UI_icon_trash.svg/40px-OOjs_UI_icon_trash.svg.png" %>
+  <% end %>
+</small>
+
+<ul>
+  <li>Address: <%= @pet.address %></li>
+  <li>Species: <%= @pet.species %></li>
+  <li>Found on: <%= @pet.found_on %></li>
+</ul>
+
+<%= link_to "Back to pets list", pets_path %>
